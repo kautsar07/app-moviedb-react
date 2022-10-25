@@ -52,7 +52,12 @@ export default function Main() {
             <h1>Populars</h1>
           </div>
           {loading ? (
-            <PacmanLoader className="loader" size={30} color={"#F37A24"} loading={loading} />
+            <PacmanLoader
+              className="loader"
+              size={30}
+              color={"#F37A24"}
+              loading={loading}
+            />
           ) : (
             <div>
               <Swiper
@@ -70,8 +75,8 @@ export default function Main() {
                     <SwiperSlide>
                       <Link to={`/Details/${item.id}`}>
                         <Card
-                        style={{color:"white"}}
-                          className="card"
+                          style={{ color: "white" }}
+                          className="ant-card-cover"
                           hoverable
                           cover={
                             <img
@@ -79,12 +84,17 @@ export default function Main() {
                             />
                           }
                         >
-                          <div  className="title">
-                            <Meta className="ant-card-meta-title" title={item.original_title} />
-                            <p>
-                              <BsFillStarFill style={{ color: "yellow" }} />{" "}
-                              {item.vote_average} / 10
-                            </p>
+                          <div className="ant-card-body">
+                            <div className="title">
+                              <Meta
+                                className="ant-card-meta-title"
+                                title={item.original_title}
+                              />
+                              <p>
+                                <BsFillStarFill style={{ color: "yellow" }} />{" "}
+                                {item.vote_average} / 10
+                              </p>
+                            </div>
                           </div>
                         </Card>
                       </Link>
@@ -98,7 +108,12 @@ export default function Main() {
             <h1>Browses by Category</h1>
           </div>
           {loading ? (
-            <PacmanLoader className="loader" size={30} color={"#F37A24"} loading={loading} />
+            <PacmanLoader
+              className="loader"
+              size={30}
+              color={"#F37A24"}
+              loading={loading}
+            />
           ) : (
             <div>
               <Swiper
@@ -111,7 +126,7 @@ export default function Main() {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
               >
-                <div className="movie-popular">
+                <div className="genre">
                   {genres &&
                     genres.map((item) => (
                       <SwiperSlide>
@@ -138,7 +153,7 @@ export default function Main() {
                     <SwiperSlide>
                       <Link to={`/Details/${item.id}`}>
                         <Card
-                          className="card"
+                          className="ant-card-cover"
                           hoverable
                           cover={
                             <img
@@ -146,12 +161,14 @@ export default function Main() {
                             />
                           }
                         >
-                          <div className="title">
-                            <Meta title={item.original_title} />
-                            <p>
-                              <BsFillStarFill style={{ color: "yellow" }} />{" "}
-                              {item.vote_average} / 10
-                            </p>
+                          <div className="ant-card-body">
+                            <div className="title">
+                              <Meta title={item.original_title} />
+                              <p>
+                                <BsFillStarFill style={{ color: "yellow" }} />{" "}
+                                {item.vote_average} / 10
+                              </p>
+                            </div>
                           </div>
                         </Card>
                       </Link>
